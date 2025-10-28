@@ -1,30 +1,34 @@
-import mysql from 'mysql2/promise';
-import { PoolOptions } from 'mysql2/promise'; // Import the type for better clarity
+import mysql, { PoolOptions } from 'mysql2/promise';
 
-// Define the configuration object with explicit type casting for environment variables
-const dbConfig: PoolOptions = {
-    // Railway's integration should populate these with the public credentials
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD, 
-    database: process.env.DB_NAME,
-    
-    // CRITICAL FIX: The port must be explicitly cast to a number.
-    // If it's undefined, Number() returns NaN, but since it's a PoolOptions object,
-    // the structure is correct, and the database library handles connection failure if the value is bad.
-    port: process.env.DB_PORT ? Number(process.env.DB_PORT) : undefined,
+// The most reliable way for Vercel to connect to Railway is using the
+// complete public connection string, which includes host, port, user, and password.
+const connectionUrl = process.env.MYSQL_PUBLIC_URL;
 
+if (!connectionUrl) {
+    console.error("FATAL ERROR: MYSQL_PUBLIC_URL environment variable is not set.");
+    // In production, throwing an error is often safer than continuing with 'undefined' host/user.
+    throw new Error("Missing database connection URL. Check Vercel environment variables.");
+}
+
+// Configuration options for the connection pool
+const dbOptions: PoolOptions = {
+    // The 'uri' property tells mysql2/promise to parse the full URL string.
+    uri: connectionUrl,
+
+    // General pool settings
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
 };
 
 // Console log for debugging the deployed environment variables
+// Note: We avoid logging the URL itself to prevent exposure, just confirming it's present.
 console.log('DB Config:', {
-    ...dbConfig,
-    password: dbConfig.password ? '***' : 'MISSING', 
+    urlDefined: !!connectionUrl,
+    connectionLimit: dbOptions.connectionLimit
 });
 
-const pool = mysql.createPool(dbConfig);
+// Create the connection pool
+const pool = mysql.createPool(dbOptions);
 
 export default pool;
