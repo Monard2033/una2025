@@ -11,7 +11,7 @@ import { DollarSign, Calendar } from "lucide-react";
 
 interface AgentSaleSummary {
     agentId: string;
-    agentName: string;
+    name: string;
     totalAmount: number;
 }
 
@@ -24,8 +24,8 @@ const showMessage = (message: string, isError: boolean = false) => {
 };
 
 const AGENT_OPTIONS = [
-    { id: '00064', name: '00064 - Persoană fizică' },
-    { id: '00065', name: '00065 - Plată terminal' },
+    { id: '1', name: '00064 - Persoană fizică' },
+    { id: '2', name: '00065 - Plată terminal' },
 ];
 
 export default function VanzariAgentiReport() {
@@ -54,6 +54,7 @@ export default function VanzariAgentiReport() {
         try {
             const res = await fetch(`/api/reports/settlements/contragents/?${params}`);
             const result = await res.json();
+            console.log("API Response:", result);
 
             if (res.ok) {
                 // The API will return either an array with one item or an empty array
@@ -72,11 +73,6 @@ export default function VanzariAgentiReport() {
 
     // Calculate overall total from the fetched data
     const overallTotal = data.reduce((sum, item) => sum + item.totalAmount, 0);
-    const padCode = (code: string | number): string => {
-        // Converts the code to a string and pads the start with zeros
-        // until the total length is 5 characters (e.g., 64 becomes "00064").
-        return String(code).padStart(5, '0');
-    };
 
     return (
         <div className="p-6 max-w-6xl mx-auto space-y-6">
@@ -121,7 +117,7 @@ export default function VanzariAgentiReport() {
 
                 <div className="flex items-end pt-2 md:pt-0">
                     <Button onClick={fetchReport} disabled={loading || !selectedDate || !agentId} className="w-full">
-                        {loading ? "Se încarcă..." : "Generează Raport"}
+                        {loading ? "Se încarcă..." : "Genereaza Raport"}
                     </Button>
                 </div>
             </div>
@@ -140,8 +136,8 @@ export default function VanzariAgentiReport() {
                         <TableBody>
                             {data.map((item, i) => (
                                 <TableRow key={item.agentId} className="text-lg font-semibold">
-                                    <TableCell>{padCode(item.agentId)}</TableCell>
-                                    <TableCell>{item.agentName}</TableCell>
+                                    <TableCell>{item.agentId}</TableCell>
+                                    <TableCell>{item.name}</TableCell>
                                     <TableCell className="text-right text-emerald-700">
                                         {item.totalAmount.toFixed(2)} MDL
                                     </TableCell>
