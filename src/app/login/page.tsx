@@ -10,7 +10,7 @@ export default function Login({}: {
         const email = formData.get('email') as string;
         const password = formData.get('password') as string;
 
-            const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/login`, {
+            const res = await fetch(`/api/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password }),
