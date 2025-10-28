@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/bfc5c0ec-7a50-4440-afdf-dba112a8d52d/console.sql" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/bfc5c0ec-7a50-4440-afdf-dba112a8d52d/console_1.sql" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/bfc5c0ec-7a50-4440-afdf-dba112a8d52d/console_2.sql" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/bfc5c0ec-7a50-4440-afdf-dba112a8d52d/console_3.sql" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/bfc5c0ec-7a50-4440-afdf-dba112a8d52d/console_4.sql" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/bfc5c0ec-7a50-4440-afdf-dba112a8d52d/console_5.sql" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/bfc5c0ec-7a50-4440-afdf-dba112a8d52d/console_6.sql" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/bfc5c0ec-7a50-4440-afdf-dba112a8d52d/console_7.sql" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/bfc5c0ec-7a50-4440-afdf-dba112a8d52d/console_8.sql" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$PROJECT_DIR$/src/app/api/agents/route.ts" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$PROJECT_DIR$/src/app/api/articles/search/route.ts" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$PROJECT_DIR$/src/app/api/realizations/[id]/confirm/route.ts" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$PROJECT_DIR$/src/app/api/realizations/[id]/items/route.ts" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$PROJECT_DIR$/src/app/api/realizations/[id]/print/route.ts" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$PROJECT_DIR$/src/app/api/realizations/route.ts" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$PROJECT_DIR$/src/app/api/receipt/[id]/route.ts" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$PROJECT_DIR$/src/app/api/reports/settlements/contragents/route.ts" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$PROJECT_DIR$/src/app/api/reports/stock-realizations/route.ts" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$PROJECT_DIR$/src/app/api/reports/stock-transfers/route.ts" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$PROJECT_DIR$/src/app/api/stock-balance/route.ts" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$PROJECT_DIR$/src/app/api/storages/route.ts" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$PROJECT_DIR$/src/app/api/transfers/route.ts" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$PROJECT_DIR$/src/app/print/invoice/[id]/page.tsx" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+    <file url="file://$PROJECT_DIR$/src/lib/print-check.ts" value="bfc5c0ec-7a50-4440-afdf-dba112a8d52d" />
+  </component>
+</project>
