@@ -1,4 +1,4 @@
-//src/app/api/realizations/[id]/print/route.ts
+//src/app/api/reports/settlements/contragents/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import pool from '@/lib/db';
 
@@ -13,8 +13,8 @@ export async function GET(req: NextRequest) {
 
     // Agent names are hardcoded based on the IDs provided in the frontend for display purposes
     const AGENT_NAMES: { [key: string]: string } = {
-        '00064': 'Persoană fizică',
-        '00065': 'Plată terminal',
+        '1': 'Persoană fizică',
+        '2': 'Plată terminal',
     };
 
     const query = `
@@ -39,10 +39,9 @@ export async function GET(req: NextRequest) {
             return NextResponse.json({ items: [] });
         }
 
-        // Map database results, ensuring totalAmount is a number and adding the name
         const items = rows.map((r: any) => ({
             agentId: String(r.agentId),
-            agentName: AGENT_NAMES[String(r.agentId)] || `Cod Necunoscut (${r.agentId})`,
+            name: AGENT_NAMES[String(r.agentId)] || `Cod Necunoscut (${r.agentId})`, // ← Change to `name`
             totalAmount: Number(r.totalAmount),
         }));
 
